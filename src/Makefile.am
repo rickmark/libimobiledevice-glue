@@ -10,11 +10,16 @@ libimobiledevice_glue_1_0_la_LIBADD =
 libimobiledevice_glue_1_0_la_SOURCES =	\
 	glue.c	\
 	socket.c	\
+	locking.c \
+	debug.c \
 	thread.c	\
 	utils.c		\
 	collection.c	\
 	termcolors.c	\
-	common.h
+	common.h \
+	sha1.c \
+	sha2.c \
+	json.c
 
 if WIN32
 libimobiledevice_glue_1_0_la_LDFLAGS += -avoid-version -static-libgcc
