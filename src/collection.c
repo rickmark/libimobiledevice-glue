@@ -45,6 +45,14 @@ LIBIMOBILEDEVICE_GLUE_API void collection_init(struct collection *col)
 	col->capacity = CAPACITY_STEP;
 }
 
+LIBIMOBILEDEVICE_GLUE_API collection_t* collection_new(void)
+{
+	collection_t *col = malloc(sizeof(collection_t));
+	assert(col);
+	collection_init(col);
+	return col;
+}
+
 LIBIMOBILEDEVICE_GLUE_API void collection_free(struct collection *col)
 {
 	assert(col->list);

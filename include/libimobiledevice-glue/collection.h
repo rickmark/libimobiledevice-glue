@@ -31,6 +31,7 @@ typedef struct collection {
 } collection_t;
 
 void collection_init(struct collection *col);
+collection_t* collection_new(void);
 void collection_add(struct collection *col, void *element);
 int collection_remove(struct collection *col, void *element);
 int collection_count(struct collection *col);
