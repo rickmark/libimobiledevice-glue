@@ -31,16 +31,21 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#define SHA1_HASH_LENGTH_BYTES 20
+#define SHA1_HASH_LENGTH_BITS 160
+#define SHA1_HASH_BLOCK_SIZE_BYTES 64
+#define SHA1_HASH_STATE_SIZE_BYTES 5
+
 typedef struct
 {
-    uint32_t state[5];
+    uint32_t state[SHA1_HASH_STATE_SIZE_BYTES];
     uint32_t count[2];
-    unsigned char buffer[64];
+    unsigned char buffer[SHA1_HASH_BLOCK_SIZE_BYTES];
 } LIMD_SHA1_CTX;
 
 void LIMD_SHA1Transform(
-    uint32_t state[5],
-    const unsigned char buffer[64]
+    uint32_t state[SHA1_HASH_STATE_SIZE_BYTES],
+    const unsigned char buffer[SHA1_HASH_BLOCK_SIZE_BYTES]
     );
 
 void LIMD_SHA1Init(
@@ -54,7 +59,7 @@ void LIMD_SHA1Update(
     );
 
 void LIMD_SHA1Final(
-    unsigned char digest[20],
+    unsigned char digest[SHA1_HASH_LENGTH_BYTES],
     LIMD_SHA1_CTX * context
     );
 
