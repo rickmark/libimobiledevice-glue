@@ -278,7 +278,7 @@ void LIMD_SHA1Final(
     memset(&finalcount, '\0', sizeof(finalcount));
 }
 
-void SHA1(
+void LIMD_SHA1(
     const unsigned char *str,
     size_t len,
     unsigned char *hash_out
