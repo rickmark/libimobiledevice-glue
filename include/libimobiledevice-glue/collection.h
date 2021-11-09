@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#ifndef COLLECTION_H
-#define COLLECTION_H
+#ifndef __LIMD_COLLECTION_H
+#define __LIMD_COLLECTION_H
 
 struct collection {
 	void **list;
@@ -49,4 +49,4 @@ void collection_copy(struct collection *dest, struct collection *src);
 		} \
 	} while(0);
 
-#endif
+#endif // __LIMD_COLLECTION_H

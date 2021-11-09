@@ -24,8 +24,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-#ifndef __LIMD_GLUE_JSON_H_
-#define __LIMD_GLUE_JSON_H_
+
+#ifndef __LIMD_GLUE_JSON_H
+#define __LIMD_GLUE_JSON_H
+
+#include <stddef.h>
 
 /**
  * JSON type identifier. Basic types are:
@@ -90,4 +93,4 @@ void LIMD_json_init(LIMD_json_parser *parser);
 LIMD_json_err_t LIMD_json_parse(LIMD_json_parser *parser, const char *js,
 		LIMD_json_tok_t *tokens, unsigned int num_tokens);
 
-#endif /* __JSMN_H_ */
+#endif /* __LIMD_GLUE_JSON_H */

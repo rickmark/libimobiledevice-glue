@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#ifndef __THREAD_H
-#define __THREAD_H
+#ifndef __LIMD_GLUE_THREAD_H
+#define __LIMD_GLUE_THREAD_H
 
 #include <stddef.h>
 
@@ -84,4 +84,4 @@ int cond_signal(cond_t* cond);
 int cond_wait(cond_t* cond, mutex_t* mutex);
 int cond_wait_timeout(cond_t* cond, mutex_t* mutex, unsigned int timeout_ms);
 
-#endif
+#endif // __LIMD_GLUE_THREAD_H

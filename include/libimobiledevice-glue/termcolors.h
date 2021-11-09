@@ -17,14 +17,16 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
-#ifndef TERMCOLORS_H
-#define TERMCOLORS_H
+
+#ifndef __LIMD_GLUE_TERMCOLORS_H
+#define __LIMD_GLUE_TERMCOLORS_H
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
 
 #include <stdarg.h>
+#include <stdio.h>
 
 #define COLOR_RESET           "\e[m"
 #define STYLE_NORMAL          "\e[0m"
@@ -83,4 +85,4 @@ int cprintf(const char* fmt, ...);
 int cfprintf(FILE* stream, const char* fmt, ...);
 int cvfprintf(FILE* stream, const char* fmt, va_list vargs);
 
-#endif
+#endif // __LIMD_GLUE_TERMCOLORS_H

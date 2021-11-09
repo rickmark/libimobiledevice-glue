@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-#ifndef SOCKET_SOCKET_H
-#define SOCKET_SOCKET_H
+#ifndef __SOCKET_SOCKET_H
+#define __SOCKET_SOCKET_H
 
 #include <stdlib.h>
 #include <stdint.h>
@@ -67,4 +67,4 @@ const char *socket_addr_to_string(struct sockaddr *addr, char *addr_out, size_t 
 
 int get_primary_mac_address(unsigned char mac_addr_buf[6]);
 
-#endif	/* SOCKET_SOCKET_H */
+#endif	/* __SOCKET_SOCKET_H */

@@ -18,8 +18,10 @@
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
-#ifndef LOCKING_H
-#define LOCKING_H
+
+#ifndef __LIMD_GLUE_LOCKING_H
+#define __LIMD_GLUE_LOCKING_H
+
 #include <stdio.h>
 #ifdef WIN32
 #include <windows.h>
@@ -40,4 +42,4 @@ typedef struct {
 int LIMD_lock_file(const char* filename, LIMD_lock_info_t* lockp);
 int LIMD_unlock_file(LIMD_lock_info_t* lockp);
 
-#endif
+#endif // __LIMD_GLUE_LOCKING_H
