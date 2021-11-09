@@ -47,6 +47,8 @@ LIBIMOBILEDEVICE_GLUE_API void collection_init(struct collection *col)
 
 LIBIMOBILEDEVICE_GLUE_API void collection_free(struct collection *col)
 {
+	assert(col->list);
+
 	free(col->list);
 	col->list = NULL;
 	col->capacity = 0;
@@ -54,6 +56,9 @@ LIBIMOBILEDEVICE_GLUE_API void collection_free(struct collection *col)
 
 LIBIMOBILEDEVICE_GLUE_API void collection_free_all(struct collection *col) 
 {
+	assert(col);
+	assert(col->list);
+
 	for (int i = 0; i < col->capacity; i++)
 	{
 		if (col->list[i] != NULL) 
@@ -67,6 +72,10 @@ LIBIMOBILEDEVICE_GLUE_API void collection_free_all(struct collection *col)
 
 LIBIMOBILEDEVICE_GLUE_API void collection_add(struct collection *col, void *element)
 {
+	assert(col);
+	assert(col->list);
+	assert(element);
+
 	int i;
 	for(i=0; i<col->capacity; i++) {
 		if(!col->list[i]) {
@@ -84,6 +93,10 @@ LIBIMOBILEDEVICE_GLUE_API void collection_add(struct collection *col, void *elem
 
 LIBIMOBILEDEVICE_GLUE_API int collection_remove(struct collection *col, void *element)
 {
+	assert(col);
+	assert(col->list);
+	assert(element);
+
 	int i;
 	for(i=0; i<col->capacity; i++) {
 		if(col->list[i] == element) {
@@ -97,6 +110,9 @@ LIBIMOBILEDEVICE_GLUE_API int collection_remove(struct collection *col, void *el
 
 LIBIMOBILEDEVICE_GLUE_API int collection_count(struct collection *col)
 {
+	assert(col);
+	assert(col->list);
+
 	int i, cnt = 0;
 	for(i=0; i<col->capacity; i++) {
 		if(col->list[i])
@@ -107,8 +123,13 @@ LIBIMOBILEDEVICE_GLUE_API int collection_count(struct collection *col)
 
 LIBIMOBILEDEVICE_GLUE_API void collection_copy(struct collection *dest, struct collection *src)
 {
-	if (!dest || !src) return;
+	assert(src);
+	assert(src->list);
+	assert(dest);
+	assert(dest->list);
+
 	dest->capacity = src->capacity;
 	dest->list = malloc(sizeof(void*) * src->capacity);
+	
 	memcpy(dest->list, src->list, sizeof(void*) * src->capacity);
 }
