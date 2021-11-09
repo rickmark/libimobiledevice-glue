@@ -4,10 +4,10 @@ AM_CFLAGS = $(GLOBAL_CFLAGS) $(PTHREAD_CFLAGS) $(libplist_CFLAGS)
 
 AM_LDFLAGS = $(PTHREAD_LIBS) $(libplist_LIBS)
 
-lib_LTLIBRARIES = libimobiledevice-glue-1.0.la
-libimobiledevice_glue_1_0_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBIMOBILEDEVICE_GLUE_SO_VERSION) -no-undefined
-libimobiledevice_glue_1_0_la_LIBADD =
-libimobiledevice_glue_1_0_la_SOURCES =	\
+lib_LTLIBRARIES = libimobiledevice-glue-1.1.la
+libimobiledevice_glue_1_1_la_LDFLAGS = $(AM_LDFLAGS) -version-info $(LIBIMOBILEDEVICE_GLUE_SO_VERSION) -no-undefined
+libimobiledevice_glue_1_1_la_LIBADD =
+libimobiledevice_glue_1_1_la_SOURCES =	\
 	glue.c	\
 	socket.c	\
 	locking.c \
@@ -22,9 +22,9 @@ libimobiledevice_glue_1_0_la_SOURCES =	\
 	json.c
 
 if WIN32
-libimobiledevice_glue_1_0_la_LDFLAGS += -avoid-version -static-libgcc
-libimobiledevice_glue_1_0_la_LIBADD += -lws2_32 -lIphlpapi
+libimobiledevice_glue_1_1_la_LDFLAGS += -avoid-version -static-libgcc
+libimobiledevice_glue_1_1_la_LIBADD += -lws2_32 -lIphlpapi
 endif
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libimobiledevice-glue-1.0.pc
+pkgconfig_DATA = libimobiledevice-glue-1.1.pc

@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.68)
-AC_INIT([libimobiledevice-glue], [1.0.0], [https://github.com/libimobiledevice/libimobiledevice-glue/issues],, [https://libimobiledevice.org])
+AC_INIT([libimobiledevice-glue], [1.1.0], [https://github.com/libimobiledevice/libimobiledevice-glue/issues],, [https://libimobiledevice.org])
 AM_INIT_AUTOMAKE([dist-bzip2 no-dist-gzip check-news])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES])
 AC_CONFIG_SRCDIR([src/])
@@ -15,7 +15,7 @@ dnl libtool versioning
 #                 changes to the signature and the semantic)
 #  ? :+1 : ?   == just internal changes
 # CURRENT : REVISION : AGE
-LIBIMOBILEDEVICE_GLUE_SO_VERSION=0:0:0
+LIBIMOBILEDEVICE_GLUE_SO_VERSION=1:0:1
 
 dnl Minimum package versions
 LIBPLIST_VERSION=2.2.0
@@ -108,7 +108,7 @@ m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 AC_CONFIG_FILES([
 Makefile
 src/Makefile
-src/libimobiledevice-glue-1.0.pc
+src/libimobiledevice-glue-1.1.pc
 include/Makefile
 ])
 AC_OUTPUT
