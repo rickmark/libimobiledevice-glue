@@ -52,6 +52,19 @@ LIBIMOBILEDEVICE_GLUE_API void collection_free(struct collection *col)
 	col->capacity = 0;
 }
 
+LIBIMOBILEDEVICE_GLUE_API void collection_free_all(struct collection *col) 
+{
+	for (int i = 0; i < col->capacity; i++)
+	{
+		if (col->list[i] != NULL) 
+		{
+			free(col->list[i]);
+			col->list[i] = NULL;
+		}
+	}
+	collection_free(col);
+}
+
 LIBIMOBILEDEVICE_GLUE_API void collection_add(struct collection *col, void *element)
 {
 	int i;

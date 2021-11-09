@@ -32,6 +32,7 @@ void collection_add(struct collection *col, void *element);
 int collection_remove(struct collection *col, void *element);
 int collection_count(struct collection *col);
 void collection_free(struct collection *col);
+void collection_free_all(struct collection *col);
 void collection_copy(struct collection *dest, struct collection *src);
 
 #define MERGE_(a,b) a ## _ ## b
