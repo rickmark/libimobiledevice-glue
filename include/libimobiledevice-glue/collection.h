@@ -22,6 +22,9 @@
 #ifndef __LIMD_COLLECTION_H
 #define __LIMD_COLLECTION_H
 
+#include <stddef.h>
+#include <stdint.h>
+
 typedef struct collection {
 	void **list;
 	int capacity;
@@ -33,6 +36,7 @@ int collection_remove(struct collection *col, void *element);
 int collection_count(struct collection *col);
 void collection_free(struct collection *col);
 void collection_free_all(struct collection *col);
+void collection_ensure_capacity(struct collection *col, size_t size);
 void collection_copy(struct collection *dest, struct collection *src);
 
 #define MERGE_(a,b) a ## _ ## b

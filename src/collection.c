@@ -70,6 +70,23 @@ LIBIMOBILEDEVICE_GLUE_API void collection_free_all(struct collection *col)
 	collection_free(col);
 }
 
+LIBIMOBILEDEVICE_GLUE_API void collection_ensure_capacity(struct collection *col, size_t capacity)
+{
+	assert(col);
+	assert(col->list);
+	assert(capacity > 0);
+
+	if (col->capacity < (int)capacity)
+	{
+		void **newlist = realloc(col->list, sizeof(void*) * capacity);
+		assert(newlist);
+		col->list = newlist;
+		col->capacity = capacity;
+	}
+
+	return;
+}
+
 LIBIMOBILEDEVICE_GLUE_API void collection_add(struct collection *col, void *element)
 {
 	assert(col);
@@ -130,6 +147,6 @@ LIBIMOBILEDEVICE_GLUE_API void collection_copy(struct collection *dest, struct c
 
 	dest->capacity = src->capacity;
 	dest->list = malloc(sizeof(void*) * src->capacity);
-	
+
 	memcpy(dest->list, src->list, sizeof(void*) * src->capacity);
 }
