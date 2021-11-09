@@ -22,10 +22,10 @@
 #ifndef __LIMD_COLLECTION_H
 #define __LIMD_COLLECTION_H
 
-struct collection {
+typedef struct collection {
 	void **list;
 	int capacity;
-};
+} collection_t;
 
 void collection_init(struct collection *col);
 void collection_add(struct collection *col, void *element);
